@@ -1,13 +1,16 @@
 #include <stdio.h>
 #include <stdlib.h>
 #define MAX 10
-
+// definition of the queue 
 struct queue
 {
     int front;
     int rear;
     int items[MAX];
 };
+
+// function to insert elements in queue
+
 void enQueue(struct queue *q,int newitem)
 {
     if(q->rear==MAX-1)
@@ -31,6 +34,9 @@ void enQueue(struct queue *q,int newitem)
     }
     printf("\n");
 }
+
+//function to remove elements from queue
+
 void deQueue(struct queue *q)
 {
     if(q->front==-1&&q->rear==-1)
@@ -55,6 +61,9 @@ void deQueue(struct queue *q)
     }
     printf("\n");
 }
+
+// function to print queue
+
 void printQueue(struct queue *q)
 {
     printf("Queue: - ");
@@ -65,7 +74,9 @@ void printQueue(struct queue *q)
     printf("\n");
 }
 int main()
-{
+{ 
+    // declaration of queue and memory allocation
+    
     struct queue *q;
     q=(struct queue*)malloc(sizeof(struct queue));
     //creating an empty Queue
